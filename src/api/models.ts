@@ -1,15 +1,17 @@
 export interface CommonListResponse<T> {
-  result: {
-    data: T[];
-    count: number;
-    totalCount?: number;
-  } | null;
-  error: unknown | Error | null;
+  results: T[] | null;
 }
 
+export type SortOrder = '' | 'ascend' | 'descend';
+
 export interface CommonListParams {
-  id?: string;
-  search?: string;
-  page?: number;
-  perPage?: number;
+  page: number;
+  pageSize: number;
+  keyword?: string;
+  results?: number;
+  nat?: string;
+  inc?: string;
+  gender?: string;
+  sortBy?: string;
+  sortOrder?: SortOrder;
 }

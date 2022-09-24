@@ -1,10 +1,12 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-// example slice
-import exampleReducer from './slices/example';
+// all reducers
+import usersReducer from './slices/users';
+import filterReducer from './slices/filter';
 
 const rootReducer = combineReducers({
-  example: exampleReducer,
+  users: usersReducer,
+  filter: filterReducer,
 });
 
 export default rootReducer;
