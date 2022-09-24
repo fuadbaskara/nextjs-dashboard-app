@@ -1,7 +1,7 @@
 /* eslint-disable operator-linebreak */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '@/store';
-import { CommonListParams } from '@/api/models';
+import { CommonListParams, SortOrder } from '@/api/models';
 
 export type FilterState = {
   filter: CommonListParams;
@@ -34,10 +34,7 @@ const filterSlice = createSlice({
       state.filter.gender = gender;
       state.filter.page = 1;
     },
-    onChangeSort(
-      state,
-      action: PayloadAction<{ sortBy: string; sortOrder: 'ascend' | 'descend' }>,
-    ) {
+    onChangeSort(state, action: PayloadAction<{ sortBy: string; sortOrder: SortOrder }>) {
       const { sortBy, sortOrder } = action.payload;
       state.filter.sortBy = sortBy;
       state.filter.sortOrder = sortOrder;

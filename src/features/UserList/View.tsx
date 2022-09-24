@@ -16,6 +16,7 @@ function UserList() {
     onChangeGender,
     onChangePagination,
     onResetFilter,
+    onSort,
   } = useHomeState();
 
   return (
@@ -29,7 +30,7 @@ function UserList() {
       />
       <Table
         dataSource={data}
-        columns={columns}
+        columns={columns({ onSort })}
         loading={loading}
         rowKey="cell"
         pagination={{

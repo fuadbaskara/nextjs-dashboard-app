@@ -2,6 +2,8 @@ export interface CommonListResponse<T> {
   results: T[] | null;
 }
 
+export type SortOrder = '' | 'ascend' | 'descend';
+
 export interface CommonListParams {
   page: number;
   pageSize: number;
@@ -11,5 +13,5 @@ export interface CommonListParams {
   inc?: string;
   gender?: string;
   sortBy?: string;
-  sortOrder?: string;
+  sortOrder?: SortOrder;
 }

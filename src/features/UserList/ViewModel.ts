@@ -10,6 +10,7 @@ import {
   onResetFilter,
   onChangeSort,
 } from '@/store/slices/filter';
+import { SortOrder } from '@/api/models';
 
 const useHomeState = () => {
   const dispatch = useAppDispatch();
@@ -33,7 +34,7 @@ const useHomeState = () => {
     debounceSearch(keyword.toLowerCase());
   };
 
-  const onSort = (sortBy: string, sortOrder: 'ascend' | 'descend') => {
+  const onSort = (sortBy: string, sortOrder: SortOrder) => {
     dispatch(onChangeSort({ sortBy, sortOrder }));
   };
 
