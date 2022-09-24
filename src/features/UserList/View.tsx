@@ -1,5 +1,6 @@
 /* eslint-disable operator-linebreak */
 import React from 'react';
+import Link from 'next/link';
 import Table from '@/components/common/Table';
 import { columns } from './components/columns';
 import useHomeState from './ViewModel';
@@ -21,6 +22,13 @@ function UserList() {
 
   return (
     <>
+      <Link href="/">
+        <span className="hover:text-blue-400">Home</span>
+      </Link>
+      <span className="px-2">/</span>
+      <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl">
+        User List
+      </h2>
       <Filter
         gender={filter.gender}
         searchValue={searchValue}
