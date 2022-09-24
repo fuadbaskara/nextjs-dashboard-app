@@ -27,10 +27,12 @@ const filterSlice = createSlice({
     onChangeSearch(state, action: PayloadAction<{ keyword: string }>) {
       const { keyword } = action.payload;
       state.filter.keyword = keyword;
+      state.filter.page = 1;
     },
     onChangeGender(state, action: PayloadAction<{ gender: '' | 'male' | 'female' }>) {
       const { gender } = action.payload;
       state.filter.gender = gender;
+      state.filter.page = 1;
     },
     onChangeSort(
       state,
@@ -39,12 +41,20 @@ const filterSlice = createSlice({
       const { sortBy, sortOrder } = action.payload;
       state.filter.sortBy = sortBy;
       state.filter.sortOrder = sortOrder;
+      state.filter.page = 1;
+    },
+    onResetFilter(state) {
+      state.filter.page = 1;
+      state.filter.keyword = '';
+      state.filter.gender = '';
+      state.filter.sortBy = '';
+      state.filter.sortOrder = '';
     },
   },
 });
 
 // Export all of the actions:
-export const { onChangePagination, onChangeSearch, onChangeGender, onChangeSort } =
+export const { onChangePagination, onChangeSearch, onChangeGender, onResetFilter, onChangeSort } =
   filterSlice.actions;
 
 // Create and export the selector:

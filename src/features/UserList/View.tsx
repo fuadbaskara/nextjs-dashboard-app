@@ -6,20 +6,36 @@ import useHomeState from './ViewModel';
 import Filter from './components/filter';
 
 function UserList() {
-  const { data, page, filter, loading, onSearch, onChangeGender, onChangePagination } =
-    useHomeState();
+  const {
+    data,
+    page,
+    filter,
+    loading,
+    searchValue,
+    onSearch,
+    onChangeGender,
+    onChangePagination,
+    onResetFilter,
+  } = useHomeState();
 
   return (
     <>
-      <Filter gender={filter.gender} onSearch={onSearch} onChangeSelect={onChangeGender} />
+      <Filter
+        gender={filter.gender}
+        searchValue={searchValue}
+        onSearch={onSearch}
+        onSelect={onChangeGender}
+        onResetFilter={onResetFilter}
+      />
       <Table
         dataSource={data}
+        columns={columns}
+        loading={loading}
+        rowKey="cell"
         pagination={{
           current: page,
           onChange: (currPage) => onChangePagination(currPage),
         }}
-        columns={columns}
-        loading={loading}
       />
     </>
   );

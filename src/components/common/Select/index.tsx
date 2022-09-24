@@ -24,7 +24,7 @@ function Select({ title, name, onChange, options, value, defaultValue, placehold
       <select
         id={name}
         name={name}
-        className="mt-1 block w-full min-w-[200px] rounded-md border-gray-300 py-2 pl-3 pr-10 text-base shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+        className="mt-1 block w-full min-w-[200px] rounded-md border-gray-300 bg-white py-2 pl-3 pr-10 text-base shadow-sm outline-none hover:cursor-pointer sm:text-sm"
         value={value || defaultValue}
         placeholder={placeholder}
         onChange={onChange}

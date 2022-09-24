@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { debounce } from 'lodash';
 import { useAppDispatch, useAppSelector } from '@/hooks';
 import { getUsersData, userListSelector } from '@/store/slices/users';
@@ -7,6 +7,7 @@ import {
   onChangeSearch,
   onChangeGender,
   onChangePagination,
+  onResetFilter,
   onChangeSort,
 } from '@/store/slices/filter';
 
@@ -14,17 +15,23 @@ const useHomeState = () => {
   const dispatch = useAppDispatch();
   const { data, info, loading } = useAppSelector(userListSelector);
   const { filter } = useAppSelector(filterSelector);
+  const [searchValue, setSearchValue] = useState('');
 
   const fetchUserList = (params?: any) => {
     dispatch(getUsersData({ params }));
   };
 
   const onSearch = (keyword: string) => {
-    dispatch(onChangeSearch({ keyword: keyword.toLowerCase() }));
+    dispatch(onChangeSearch({ keyword }));
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const debounceSearch = useCallback(debounce(onSearch, 500), []);
+
+  const onDebounceSearch = (keyword: string) => {
+    setSearchValue(keyword);
+    debounceSearch(keyword.toLowerCase());
+  };
 
   const onSort = (sortBy: string, sortOrder: 'ascend' | 'descend') => {
     dispatch(onChangeSort({ sortBy, sortOrder }));
@@ -39,6 +46,11 @@ const useHomeState = () => {
     dispatch(onChangeGender({ gender }));
   };
 
+  const onFilterReset = () => {
+    setSearchValue('');
+    dispatch(onResetFilter());
+  };
+
   useEffect(() => {
     fetchUserList(filter);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -50,9 +62,11 @@ const useHomeState = () => {
     filter,
     info,
     loading,
-    onSearch: debounceSearch,
+    searchValue,
+    onSearch: onDebounceSearch,
     onChangeGender: onGenderChange,
     onChangePagination: onPaginationChange,
+    onResetFilter: onFilterReset,
     onSort,
   };
 };
