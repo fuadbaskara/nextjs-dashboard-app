@@ -94,30 +94,31 @@ function Table<T>({ title, dataSource, rowKey, pagination, columns, loading }: T
                     ))}
                   </tr>
                 </thead>
-                <tbody>
-                  {!loading && (
-                    <>
-                      {(dataSource || []).map((data: T | any, idx: number) => (
-                        <tr
-                          key={data[`${rowKey}`] || uuid()}
-                          className={`${
-                            idx % 2 === 0 ? 'bg-white' : 'bg-cyan-50'
-                          } hover:bg-cyan-100`}
-                        >
-                          {(columns || []).map((col) => (
-                            <td
-                              key={col.key || col.dataIndex}
-                              className="font-small whitespace-nowrap px-6 py-4 text-sm text-gray-500"
-                            >
-                              {col.render(data)}
-                            </td>
-                          ))}
-                        </tr>
-                      ))}
-                    </>
-                  )}
-                </tbody>
+                {!loading && (
+                  <tbody>
+                    {(dataSource || []).map((data: T | any, idx: number) => (
+                      <tr
+                        key={data[`${rowKey}`] || uuid()}
+                        className={`${idx % 2 === 0 ? 'bg-white' : 'bg-cyan-50'} hover:bg-cyan-100`}
+                      >
+                        {(columns || []).map((col) => (
+                          <td
+                            key={col.key || col.dataIndex}
+                            className="font-small whitespace-nowrap px-6 py-4 text-sm text-gray-500"
+                          >
+                            {col.render(data)}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                )}
               </table>
+              {loading && (
+                <div className="flex h-80 w-full items-center justify-center">
+                  <span className="text-xl">Loading...</span>
+                </div>
+              )}
             </div>
           </div>
         </div>
