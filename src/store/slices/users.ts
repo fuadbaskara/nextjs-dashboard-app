@@ -30,7 +30,6 @@ const usersSlice = createSlice({
     });
     builder.addCase(getUsersData.fulfilled, (state, { payload }) => {
       const { results } = payload;
-      console.log(payload);
       state.data = results.results;
       state.info = results.info;
       state.loading = false;
