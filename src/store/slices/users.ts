@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import user from '@/api/user';
 import { RootState } from '@/store';
 import { ResponseInfo, User } from '@/api/user/model';
+import { CommonListParams } from '@/api/models';
 
 export type UserState = {
   data: User[];
@@ -9,10 +10,18 @@ export type UserState = {
   loading: boolean;
 };
 
-const getUsersData = createAsyncThunk<any, any, any>('users/getUserList', async ({ params }) => {
-  const res = await user.fetchUsers(params);
-  return res;
-});
+export type UserResponse = {
+  data: User[];
+  info: ResponseInfo | null;
+};
+
+const getUsersData = createAsyncThunk<any, { params: CommonListParams }, { state: RootState }>(
+  'users/getUserList',
+  async ({ params }) => {
+    const res = await user.fetchUsers(params);
+    return res;
+  },
+);
 
 const initialState: UserState = {
   data: [],
