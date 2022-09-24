@@ -26,5 +26,6 @@ module.exports = {
     'no-param-reassign': 'off',
     '@typescript-eslint/indent': 'off',
     'import/extensions': 'off',
+    'object-curly-newline': 'off',
   },
 };
