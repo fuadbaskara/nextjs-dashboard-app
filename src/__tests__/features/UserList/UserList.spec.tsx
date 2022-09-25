@@ -34,28 +34,44 @@ describe('UserList Component test case: ', () => {
 
   test('Test pagination:', () => {
     renderUserList();
+
+    // test pagination page 1 btn (expected output: 1)
     const paginationBtn1 = screen.getByTestId('page-1-btn');
     expect(paginationBtn1).toBeInTheDocument();
     fireEvent.click(paginationBtn1);
     expect(paginationBtn1).toHaveClass('bg-blue-100');
+    expect(store.getState().filter.filter.page).toEqual(1);
 
+    // test pagination page 5 btn (expected output: 5)
     const paginationBtn5 = screen.getByTestId('page-5-btn');
     expect(paginationBtn5).toBeInTheDocument();
     fireEvent.click(paginationBtn5);
     expect(paginationBtn5).toHaveClass('bg-blue-100');
+    expect(store.getState().filter.filter.page).toEqual(5);
 
+    // set back to page 1
     fireEvent.click(paginationBtn1);
     expect(paginationBtn1).toHaveClass('bg-blue-100');
+    expect(store.getState().filter.filter.page).toEqual(1);
 
+    // test pagination prev btn before page 1 (expected output: 1)
     const paginationPrevBtn = screen.getByTestId('prev-page-btn');
     expect(paginationPrevBtn).toBeInTheDocument();
     fireEvent.click(paginationPrevBtn);
     expect(store.getState().filter.filter.page).toEqual(1);
 
+    // test pagination next btn after page 1 (expected output: 2)
     const paginationNextBtn = screen.getByTestId('next-page-btn');
     expect(paginationNextBtn).toBeInTheDocument();
     fireEvent.click(paginationNextBtn);
     expect(store.getState().filter.filter.page).toEqual(2);
+
+    // test pagination next btn after page 5 (expected output: 6)
+    fireEvent.click(paginationBtn5);
+    expect(paginationBtn5).toHaveClass('bg-blue-100');
+    expect(store.getState().filter.filter.page).toEqual(5);
+    fireEvent.click(paginationNextBtn);
+    expect(store.getState().filter.filter.page).toEqual(6);
   });
 
   test('Table data:', async () => {

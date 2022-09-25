@@ -34,11 +34,11 @@ export interface User {
     sha256: string;
   };
   dob: {
-    date: Date;
+    date: Date | string;
     age: number;
   };
   registered: {
-    date: Date;
+    date: Date | string;
     age: number;
   };
   phone: string;
