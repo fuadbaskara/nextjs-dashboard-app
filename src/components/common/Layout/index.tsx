@@ -10,8 +10,10 @@ function Layout({ children }: LayoutProps) {
     <>
       <Header />
       <div className="mt-20 block bg-slate-100">
-        <div className="flex flex-1 flex-col">
-          <div className="container mx-auto space-y-4 py-6">{children}</div>
+        <div className="flex w-full flex-1 flex-col">
+          <div className="container mx-auto space-y-4 py-6 px-4">
+            {children}
+          </div>
         </div>
       </div>
     </>
