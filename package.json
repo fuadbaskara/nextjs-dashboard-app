@@ -14,8 +14,6 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:types": "tsc --noEmit",
-    "pre-commit": "yarn lint",
-    "pre-push": "yarn test",
     "code-check": "yarn format:fix && yarn lint && yarn lint:types && yarn test"
   },
   "dependencies": {
