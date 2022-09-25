@@ -1,6 +1,7 @@
 # nextjs-dashboard-app
 
-> Simple Dashboard app build with Nextjs + Typescript + @Redux/toolkit + tailwind and some more. \n
+> Simple Dashboard app build with Nextjs + Typescript + @Redux/toolkit + tailwind and some more.
+
 > See live demo here [nextjs-dashboard-app](https://nextjs-dashboard-app.vercel.app/).
 
 ## Table of Contents
