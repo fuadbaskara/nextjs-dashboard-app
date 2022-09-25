@@ -43,8 +43,8 @@ export const columns = ({ onSort }: ColumnProps) => {
     },
     {
       title: 'Registered Date',
-      dataIndex: 'registered',
-      key: 'registered',
+      dataIndex: 'date',
+      key: 'date',
       render: (record: User) => (
         <div>
           {record.registered.date

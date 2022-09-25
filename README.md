@@ -5,7 +5,7 @@
 
 ## Table of Contents
 
-- [Nextjs Dashboar App](#nextjs-dashboar-app)
+- [nextjs-dashboar-app](#nextjs-dashboar-app)
   - [Table of Contents](#table-of-contents)
   - [General Information](#general-information)
   - [Technologies Used](#technologies-used)
@@ -92,11 +92,7 @@ Requirements:
 ```bash
 // consider using nvm to manage your node version
 node v16.17.0
-
-// if you're using yarn
 yarn v1.22.19
-
-// if you're using npm
 npm v8.15.0
 ```
 
@@ -118,9 +114,9 @@ NEXT_PUBLIC_API_SEED=8613232dc211323c
 
 If something wrong happened and can't run the project, try this steps:
 
-- remove .next folder in root folder.
-- remove node_modules folder.
-- re-run the installation steps.
+- remove `.next` folder in root folder.
+- remove `node_modules` folder.
+- re-run the installation or Setup [steps](#setup).
 
 ## Usage
 
