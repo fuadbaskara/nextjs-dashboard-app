@@ -63,7 +63,7 @@ root
    |               |        ├── _filter.tsx
    |               |        └── _columns.tsx
    |               ├── _View.tsx
-   |                    └── _ViewModel.ts
+   |               └── _ViewModel.ts
    |
    ├── _hooks
    |
