@@ -5,7 +5,7 @@
 
 ## Table of Contents
 
-- [nextjs-dashboar-app](#nextjs-dashboar-app)
+- [Nextjs Dashboar App](#nextjs-dashboar-app)
   - [Table of Contents](#table-of-contents)
   - [General Information](#general-information)
   - [Technologies Used](#technologies-used)
