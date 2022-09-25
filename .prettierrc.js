@@ -6,7 +6,7 @@ module.exports = {
   bracketSpacing: true,
   useTabs: false,
   tabWidth: 2,
-  printWidth: 100,
+  printWidth: 80,
   arrowParens: 'always',
   trailingComma: 'all',
 };

@@ -1,4 +1,3 @@
-/* eslint-disable operator-linebreak */
 import React from 'react';
 import Link from 'next/link';
 import Table from '@/components/common/Table';
