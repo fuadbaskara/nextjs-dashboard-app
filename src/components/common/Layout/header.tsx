@@ -10,11 +10,11 @@ function Header() {
       <div className="w-full px-8">
         <Link href="/">
           <Image
-            src="/images/ajaib-logo.png"
+            src="/images/logo.png"
             width={320 * 0.48}
             height={118 * 0.48}
             quality={30}
-            alt="ajaib-logo"
+            alt="logo"
             className="h-auto w-20 w-[154px]"
           />
         </Link>
