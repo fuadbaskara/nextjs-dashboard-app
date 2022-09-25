@@ -11,7 +11,13 @@ export type FilterProps = {
   onResetFilter: () => void;
 };
 
-function Filter({ gender, searchValue, onSearch, onSelect, onResetFilter }: FilterProps) {
+function Filter({
+  gender,
+  searchValue,
+  onSearch,
+  onSelect,
+  onResetFilter,
+}: FilterProps) {
   const options = [
     {
       label: 'All',
@@ -45,7 +51,7 @@ function Filter({ gender, searchValue, onSearch, onSelect, onResetFilter }: Filt
         onChange={(e) => onSelect(e.target.value)}
       />
       <Button
-        className="font-small items-center rounded-md border border-blue-300 bg-blue-200 px-2 py-2 text-sm text-blue-500 hover:bg-blue-100 hover:text-blue-400"
+        className="font-small hover:bg-white-100 items-center rounded-md border border-blue-100 bg-white px-2 py-2 text-sm text-gray-500 hover:border-blue-300 hover:text-blue-400 focus:border-blue-400"
         type="button"
         onClick={onResetFilter}
       >
