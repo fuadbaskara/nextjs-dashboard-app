@@ -51,7 +51,7 @@ function Filter({
         onChange={(e) => onSelect(e.target.value)}
       />
       <Button
-        className="font-small hover:bg-white-100 items-center rounded-md border border-blue-100 bg-black px-2 py-2 text-sm text-gray-500 hover:border-blue-300 hover:text-blue-400 focus:border-blue-400"
+        className="font-small hover:bg-white-100 items-center rounded-md border border-blue-100 bg-white px-2 py-2 text-sm text-gray-500 hover:border-blue-300 hover:text-blue-400 focus:border-blue-400"
         type="button"
         onClick={onResetFilter}
       >
