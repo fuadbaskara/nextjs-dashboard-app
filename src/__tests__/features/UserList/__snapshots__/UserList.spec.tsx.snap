@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render UserList render UserList to match snapshot: 1`] = `
+exports[`UserList Component test case:  render UserList to match snapshot: 1`] = `
 <DocumentFragment>
   <span
     class="hover:text-blue-400"
@@ -304,6 +304,7 @@ exports[`Render UserList render UserList to match snapshot: 1`] = `
         <li>
           <button
             class="inline-flex items-center rounded-l-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-blue-500 hover:bg-blue-50"
+            data-testid="prev-page-btn"
             style="font-size: 1.03rem;"
             type="button"
           >
@@ -325,6 +326,7 @@ exports[`Render UserList render UserList to match snapshot: 1`] = `
         <li>
           <button
             class="z-10 border-blue-500 bg-blue-100 text-blue-600 inline-flex items-center border px-4 py-1.5 text-sm font-medium"
+            data-testid="page-1-btn"
             type="button"
           >
             1
@@ -333,6 +335,7 @@ exports[`Render UserList render UserList to match snapshot: 1`] = `
         <li>
           <button
             class="border-gray-300 bg-white text-blue-500 hover:bg-blue-50 inline-flex items-center border px-4 py-1.5 text-sm font-medium"
+            data-testid="page-2-btn"
             type="button"
           >
             2
@@ -341,6 +344,7 @@ exports[`Render UserList render UserList to match snapshot: 1`] = `
         <li>
           <button
             class="border-gray-300 bg-white text-blue-500 hover:bg-blue-50 inline-flex items-center border px-4 py-1.5 text-sm font-medium"
+            data-testid="page-3-btn"
             type="button"
           >
             3
@@ -349,6 +353,7 @@ exports[`Render UserList render UserList to match snapshot: 1`] = `
         <li>
           <button
             class="border-gray-300 bg-white text-blue-500 hover:bg-blue-50 inline-flex items-center border px-4 py-1.5 text-sm font-medium"
+            data-testid="page-4-btn"
             type="button"
           >
             4
@@ -357,6 +362,7 @@ exports[`Render UserList render UserList to match snapshot: 1`] = `
         <li>
           <button
             class="border-gray-300 bg-white text-blue-500 hover:bg-blue-50 inline-flex items-center border px-4 py-1.5 text-sm font-medium"
+            data-testid="page-5-btn"
             type="button"
           >
             5
@@ -365,6 +371,7 @@ exports[`Render UserList render UserList to match snapshot: 1`] = `
         <li>
           <button
             class="inline-flex items-center rounded-r-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-blue-500 hover:bg-blue-50"
+            data-testid="next-page-btn"
             style="font-size: 1.03rem;"
             type="button"
           >
