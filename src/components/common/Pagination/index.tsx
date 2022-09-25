@@ -48,6 +48,7 @@ function Pagination({ current, onChange }: PaginationProps) {
     <ul className="flex">
       <li>
         <Button
+          data-testid="prev-page-btn"
           className="inline-flex items-center rounded-l-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-blue-500 hover:bg-blue-50"
           style={{ fontSize: '1.03rem' }}
           type="button"
@@ -59,6 +60,7 @@ function Pagination({ current, onChange }: PaginationProps) {
       {pageNumbers.map((page) => (
         <li key={page}>
           <Button
+            data-testid={`page-${page}-btn`}
             onClick={() => onClickPageNumber(page)}
             className={clsx(
               page === current
@@ -73,6 +75,7 @@ function Pagination({ current, onChange }: PaginationProps) {
       ))}
       <li>
         <Button
+          data-testid="next-page-btn"
           className="inline-flex items-center rounded-r-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-blue-500 hover:bg-blue-50"
           style={{ fontSize: '1.03rem' }}
           type="button"
