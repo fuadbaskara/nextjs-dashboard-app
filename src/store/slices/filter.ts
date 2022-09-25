@@ -1,4 +1,3 @@
-/* eslint-disable operator-linebreak */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '@/store';
 import { CommonListParams, SortOrder } from '@/api/models';
@@ -29,12 +28,18 @@ const filterSlice = createSlice({
       state.filter.keyword = keyword;
       state.filter.page = 1;
     },
-    onChangeGender(state, action: PayloadAction<{ gender: '' | 'male' | 'female' }>) {
+    onChangeGender(
+      state,
+      action: PayloadAction<{ gender: '' | 'male' | 'female' }>,
+    ) {
       const { gender } = action.payload;
       state.filter.gender = gender;
       state.filter.page = 1;
     },
-    onChangeSort(state, action: PayloadAction<{ sortBy: string; sortOrder: SortOrder }>) {
+    onChangeSort(
+      state,
+      action: PayloadAction<{ sortBy: string; sortOrder: SortOrder }>,
+    ) {
       const { sortBy, sortOrder } = action.payload;
       state.filter.sortBy = sortBy;
       state.filter.sortOrder = sortOrder;
@@ -51,8 +56,13 @@ const filterSlice = createSlice({
 });
 
 // Export all of the actions:
-export const { onChangePagination, onChangeSearch, onChangeGender, onResetFilter, onChangeSort } =
-  filterSlice.actions;
+export const {
+  onChangePagination,
+  onChangeSearch,
+  onChangeGender,
+  onResetFilter,
+  onChangeSort,
+} = filterSlice.actions;
 
 // Create and export the selector:
 export const filterSelector = (state: RootState) => state.filter;

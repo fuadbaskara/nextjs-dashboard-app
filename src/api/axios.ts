@@ -2,7 +2,6 @@ import axios, { AxiosPromise, AxiosRequestConfig, Method } from 'axios';
 
 import METHODS from './methods';
 import { errorInterceptor, responseInterceptor } from './interceptors';
-import { toSnakeCase } from '../utils/string';
 
 const instance = axios.create();
 instance.interceptors.response.use(responseInterceptor, errorInterceptor);
@@ -25,16 +24,19 @@ const apiCall = (
       'Content-Type': 'application/json',
     },
   };
-  const payload = { seeds: process.env.NEXT_PUBLIC_API_SEED, ...data } as Record<string, any>;
+  const payload = {
+    seeds: process.env.NEXT_PUBLIC_API_SEED,
+    ...data,
+  } as Record<string, any>;
   if (method === METHODS.GET) {
     Object.keys(payload).forEach((key) => {
       if (payload[key] === null || payload[key] === '') {
         delete payload[key];
       }
     });
-    config.params = toSnakeCase(payload);
+    config.params = payload;
   } else {
-    config.data = toSnakeCase(payload);
+    config.data = payload;
   }
   return instance.request(config);
 };
