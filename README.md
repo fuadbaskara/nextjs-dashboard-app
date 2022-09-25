@@ -1,34 +1,154 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# nextjs-dashboar-app
 
-## Getting Started
+> Simple Dashboard app build with Nextjs + Typescript + @Redux/toolkit + tailwind and some more.
+> See live demo here [nextjs-dashboar-app](https://nextjs-dashboard-app.vercel.app/).
 
-First, run the development server:
+## Table of Contents
+
+- [nextjs-dashboar-app](#nextjs-dashboar-app)
+  - [Table of Contents](#table-of-contents)
+  - [General Information](#general-information)
+  - [Technologies Used](#technologies-used)
+  - [Project Structure](#project-structure)
+  - [Screenshots](#screenshots)
+  - [Setup](#setup)
+  - [Usage](#usage)
+  - [Project Status](#project-status)
+  - [Room for Improvement](#room-for-improvement)
+  - [Contact](#contact)
+
+## General Information
+
+This project is intended as a private playground to explore more about Frontend techstacks and tools and its compatibility to each other. I made this project to also for trying new things and research some new FE technology in the future.
+
+## Technologies Used
+
+- [Nextjs](https://nextjs.org/) - version 12.2.5
+- [Typescript](https://www.typescriptlang.org/) - version 17.0.0
+- [@Redux/toolkit](https://redux-toolkit.js.org/) - version 1.8.5
+- [Tailwindcss](https://tailwindcss.com/) - version
+- [Jest](#nextjs-dashboar-app) - version
+- [Reac testing library](https://testing-library.com/docs/react-testing-library/intro/) - version
+- [React Icons](https://react-icons.github.io/react-icons/) - version
+- [Typescript Airbnb ESLint](https://www.npmjs.com/package/eslint-config-airbnb-typescript) - version 17.0.0
+
+## Project Structure
 
 ```bash
-npm run dev
-# or
+root
+└── _src
+   ├── __tests__
+   |       |
+   |       ├── _components
+   |       |   └── _Button.spec.tsx
+   |       |
+   |       └── _features
+   |           └── _UserList
+   |               ├── __snapshots__
+   |               |
+   |               └── UserList.spec.tsx
+   |
+   ├── _api
+   |    └───── _user
+   |           ├── _index.ts
+   |           └── _models.ts
+   |
+   ├── _components
+   |           └── _Button
+   |               └── _component.tsx
+   |
+   ├── _features
+   |           └── _UserList
+   |               ├── _components
+   |               |        ├── _filter.tsx
+   |               |        └── _columns.tsx
+   |               ├── _View.tsx
+   |                    └── _ViewModel.ts
+   |
+   ├── _hooks
+   |
+   ├── _pages
+   |   └── _UserList/[id]/[...slug].tsx
+   |
+   ├── _store
+   |   └── _slices
+   |       ├── _filter.ts
+   |       └── _users.ts
+   |
+   ├── _styles
+   |
+   └── _utils
+
+```
+
+## Screenshots
+
+![Example screenshot](./public/images/preview.png)
+
+## Setup
+
+Requirements:
+
+```bash
+// consider using nvm to manage your node version
+node v16.17.0
+
+// if you're using yarn
+yarn v1.22.19
+
+// if you're using npm
+npm v8.15.0
+```
+
+Installation:
+
+```bash
+// run this command to start run the project:
+
+yarn install
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Set your .env variables:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+NEXT_PUBLIC_API_URL=https://randomuser.me/api/
+NEXT_PUBLIC_API_SEED=8613232dc211323c
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+If something wrong happened and can't run the project, try this steps:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- remove .next folder in root folder.
+- remove node_modules folder.
+- re-run the installation steps.
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+There is several command that you might need to know to run some features in this project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Run test case: `yarn test`
+- Build project: `yarn build`
+- Check ESLint errors: `yarn lint`
+- Autofix ESLint errors: `yarn lint:fix`
+- Prepare husky integration: `yarn prepare`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Project Status
 
-## Deploy on Vercel
+Project is: _in progress_
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Room for Improvement
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+After reviewing the project there is several things that can be improved, here's what can be improved next:
+
+Room for improvement:
+
+- Add more test case
+- Should consider adding [Cypress](https://www.cypress.io/) e2e test case
+
+To do:
+
+- Consider mock development
+
+## Contact
+
+Created by [@fuadbaskara](https://www.linkedin.com/in/fuad-baskara-b07ab7164/) - contact me on linkedin!
