@@ -35,7 +35,7 @@ This project is intended as a private playground to explore more about Frontend 
 - [React testing library](https://testing-library.com/docs/react-testing-library/intro/) - version 12.1.3
 - [React Icons](https://react-icons.github.io/react-icons/) - version 4.4.0
 - [Typescript Airbnb ESLint](https://www.npmjs.com/package/eslint-config-airbnb-typescript) - version 17.0.0
-- [Mock Service Worker](https://mswjs.io/) - version
+- [Mock Service Worker](https://mswjs.io/) - version 0.47.3
 
 ## Project Structure
 
