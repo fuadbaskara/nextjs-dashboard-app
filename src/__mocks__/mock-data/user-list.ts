@@ -369,8 +369,6 @@ export const mockUser = {
   info: { seed: 'df5683bac670478e', results: 10, page: 1, version: '1.4' },
 };
 
-test('dummy', () => {});
-
 export default {
   mockUser,
 };

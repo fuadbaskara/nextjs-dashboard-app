@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select Component renders correctly with simple props: 1`] = `
+<DocumentFragment>
+  <div>
+    <label
+      class="block text-sm font-medium text-gray-700"
+      for="gender"
+    >
+      Gender
+    </label>
+    <select
+      class="mt-1 block w-full min-w-[200px] rounded-md border-gray-300 bg-white py-2 pl-3 pr-10 text-base shadow-sm outline-none hover:cursor-pointer sm:text-sm"
+      id="gender"
+      name="gender"
+      placeholder=""
+    >
+      <option
+        value=""
+      >
+        All
+      </option>
+      <option
+        value="male"
+      >
+        Male
+      </option>
+      <option
+        value="female"
+      >
+        Female
+      </option>
+    </select>
+  </div>
+</DocumentFragment>
+`;

@@ -1,14 +1,21 @@
+/* eslint-disable testing-library/prefer-query-by-disappearance */
 /* eslint-disable testing-library/no-node-access */
 import React from 'react';
-import { fireEvent, screen } from '@testing-library/react';
+import {
+  fireEvent,
+  screen,
+  waitForElementToBeRemoved,
+} from '@testing-library/react';
 import { store } from '@/store';
 import UserList from '@/features/UserList/View';
 import { render } from '@/__tests__/test-utils';
+import server from '@/__mocks__/server';
 
 const renderUserList = () => render(<UserList />);
 
-// room for improvement: use data-testid (getByTest / getBytTestId)
-// instead of getByPlaceholderText, or DOM querySelector
+beforeEach(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
 
 describe('UserList Component test case: ', () => {
   test('render UserList to match snapshot:', () => {
@@ -73,17 +80,16 @@ describe('UserList Component test case: ', () => {
     fireEvent.click(paginationNextBtn);
     expect(store.getState().filter.filter.page).toEqual(6);
   });
-
-  test('Table data:', async () => {
-    renderUserList();
-    const tableRows = document.querySelectorAll('tr');
-    expect(tableRows).toHaveLength(1);
-  });
 });
 
 describe('UserList Redux integration test case: ', () => {
-  test('Table data:', async () => {
-    renderUserList();
-    // coming soon!
+  test('User list Table should render 11 table rows (1 row <tr> inside <thead> & 10 rows <tr> inside <tbody>):', async () => {
+    renderUserList(); // integrated with actual API calls using msw and get the mock data
+    await waitForElementToBeRemoved(screen.getByText('Loading...')); // wait for loading to gone
+    const tableRows = document.querySelectorAll('tr'); // get all existing table rows from DOM
+    expect(tableRows).toHaveLength(11); // check there is 11 rows of <tr> on the screen
+    expect(store.getState().users.data).toHaveLength(10); // check if data is in redux store
+
+    // will add more test cases later in free time
   });
 });

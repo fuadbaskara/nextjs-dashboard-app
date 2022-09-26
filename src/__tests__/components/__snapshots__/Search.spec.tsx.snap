@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Component renders correctly with simple props: 1`] = `
+<DocumentFragment>
+  <div>
+    <label
+      class="block text-sm font-medium text-gray-700"
+      for="search"
+    >
+      Search
+    </label>
+    <div
+      class="mt-1 flex rounded-md shadow-sm"
+    >
+      <div
+        class="relative flex flex-grow items-stretch focus-within:z-10"
+      >
+        <input
+          autocomplete="off"
+          class="block w-full min-w-[200px] rounded-md border-gray-300 py-2 px-2 outline-none hover:cursor-pointer sm:text-sm"
+          id="search"
+          name="search"
+          placeholder="Search by keyword"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

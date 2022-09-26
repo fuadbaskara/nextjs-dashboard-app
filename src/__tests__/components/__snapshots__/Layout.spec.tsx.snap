@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout Wrapper Component renders correctly with simple children component: 1`] = `
+<DocumentFragment>
+  <header
+    class="fixed top-0 z-10 block w-full bg-white p-4 shadow shadow-stone-200"
+  >
+    <div
+      class="w-full px-8"
+    >
+      <img
+        alt="logo"
+        class="h-auto w-20 w-[154px]"
+        data-nimg="future"
+        decoding="async"
+        height="56.64"
+        loading="lazy"
+        src="/_next/image?url=%2Fimages%2Flogo.png&w=384&q=30"
+        srcset="/_next/image?url=%2Fimages%2Flogo.png&w=256&q=30 1x, /_next/image?url=%2Fimages%2Flogo.png&w=384&q=30 2x"
+        style="color: transparent;"
+        width="153.6"
+      />
+    </div>
+  </header>
+  <div
+    class="mt-20 block bg-slate-100"
+  >
+    <div
+      class="flex w-full flex-1 flex-col"
+    >
+      <div
+        class="container mx-auto space-y-4 py-6 px-4"
+      >
+        <div>
+          Some Component
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
