@@ -5,6 +5,7 @@ const createJestConfig = nextJest({
 });
 
 const customJestConfig = {
+  testURL: 'https://randomuser.me/api/',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleDirectories: ['node_modules', '<rootDir>/'],
   testEnvironment: 'jest-environment-jsdom',
@@ -18,6 +19,7 @@ const customJestConfig = {
     '^@/styles(.*)$': '<rootDir>/src/styles/$1',
     '^@/utils(.*)$': '<rootDir>/src/utils/$1',
     '^@/__tests__(.*)$': '<rootDir>/src/__tests__/$1',
+    '^@/__mocks__(.*)$': '<rootDir>/src/__mocks__/$1',
   },
 };
 

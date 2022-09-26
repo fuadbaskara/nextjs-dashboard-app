@@ -4,7 +4,7 @@ import { render } from '../test-utils';
 import Table from '@/components/common/Table';
 import { SortOrder } from '@/api/models';
 import { dateToString } from '@/utils/datetime';
-import { mockUser } from '../mock-data/user-list';
+import { mockUser } from '../../__mocks__/mock-data/user-list';
 import { User } from '@/api/user/model';
 
 const userList: User[] = mockUser.results;

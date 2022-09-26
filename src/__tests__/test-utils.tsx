@@ -4,14 +4,14 @@ import { render, RenderOptions } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { store } from '@/store';
 
-const AllTheProviders: FC<{ children: React.ReactNode }> = ({ children }) => {
+const Wrapper: FC<{ children: React.ReactNode }> = ({ children }) => {
   return <Provider store={store}>{children}</Provider>;
 };
 
 const customRender = (
   ui: ReactElement,
   options?: Omit<RenderOptions, 'wrapper'>,
-) => render(ui, { wrapper: AllTheProviders, ...options });
+) => render(ui, { wrapper: Wrapper, ...options });
 
 test('dummy', () => {});
 

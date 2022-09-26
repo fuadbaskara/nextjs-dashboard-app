@@ -3,14 +3,18 @@
 > Simple Dashboard app build with Nextjs + Typescript + @Redux/toolkit + tailwind and some more.
 > See live demo here [nextjs-dashboard-app](https://nextjs-dashboard-app.vercel.app/).
 
+## Preview Project
+
+![Example screenshot](./public/images/preview.png)
+
 ## Table of Contents
 
 - [nextjs-dashboard-app](#nextjs-dashboard-app)
+  - [Preview Project](#preview-project)
   - [Table of Contents](#table-of-contents)
   - [General Information](#general-information)
   - [Technologies Used](#technologies-used)
   - [Project Structure](#project-structure)
-  - [Screenshots](#screenshots)
   - [Setup](#setup)
   - [Usage](#usage)
   - [Project Status](#project-status)
@@ -31,6 +35,7 @@ This project is intended as a private playground to explore more about Frontend 
 - [React testing library](https://testing-library.com/docs/react-testing-library/intro/) - version 12.1.3
 - [React Icons](https://react-icons.github.io/react-icons/) - version 4.4.0
 - [Typescript Airbnb ESLint](https://www.npmjs.com/package/eslint-config-airbnb-typescript) - version 17.0.0
+- [Mock Service Worker](https://mswjs.io/) - version
 
 ## Project Structure
 
@@ -81,10 +86,6 @@ root
 
 ```
 
-## Screenshots
-
-![Example screenshot](./public/images/preview.png)
-
 ## Setup
 
 Requirements:
@@ -116,7 +117,7 @@ If something wrong happened and can't run the project, try this steps:
 
 - remove `.next` folder in root folder.
 - remove `node_modules` folder.
-- re-run the installation or Setup [steps](#setup).
+- re-run the installation or [Setup steps](#setup).
 
 ## Usage
 
@@ -128,9 +129,20 @@ There is several command that you might need to know to run some features in thi
 - Autofix ESLint errors: `yarn lint:fix`
 - Prepare husky integration: `yarn prepare`
 
+If there is trouble of your test case failing or you can't commit your changes,
+it might be caused by unmatched **snapshots**. try run this command to update the test snapshots:
+
+```bash
+// to update test __snapshots__
+yarn test -u
+
+// re-run git commit if needed
+git commit -m "<action_type_here>(<changes_type_here>): <commit_comment_here>"
+```
+
 ## Project Status
 
-Project is: _in progress_
+Project is: **_in progress_**
 
 ## Room for Improvement
 
@@ -138,7 +150,7 @@ After reviewing the project there is several things that can be improved, here's
 
 Room for improvement:
 
-- Add more test case
+- Add more test cases
 - Should consider adding [Cypress](https://www.cypress.io/) e2e test case
 
 To do:
