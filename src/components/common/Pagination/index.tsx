@@ -10,10 +10,9 @@ export type PaginationProps = {
 
 function Pagination({ current, onChange }: PaginationProps) {
   const [pageNumbers, setPageNumbers] = useState<number[]>([1, 2, 3, 4, 5]);
-  const [selectedPage, setSelectedPage] = useState<number>(1);
 
   const onClickPageNumber = (page: number) => {
-    setSelectedPage(page);
+    onChange(page);
   };
 
   const onClickPrev = () => {
@@ -23,8 +22,8 @@ function Pagination({ current, onChange }: PaginationProps) {
         newPageNumbers.unshift(current - 1);
         newPageNumbers.pop();
         setPageNumbers(newPageNumbers);
-        setSelectedPage(current - 1);
-      } else setSelectedPage(current - 1);
+        onChange(current - 1);
+      } else onChange(current - 1);
     }
   };
 
@@ -35,14 +34,14 @@ function Pagination({ current, onChange }: PaginationProps) {
         newPageNumbers.push(current + 1);
         newPageNumbers.shift();
         setPageNumbers(newPageNumbers);
-        setSelectedPage(current + 1);
-      } else setSelectedPage(current + 1);
+        onChange(current + 1);
+      } else onChange(current + 1);
     }
   };
 
   useEffect(() => {
-    onChange(selectedPage);
-  }, [onChange, selectedPage]);
+    if (current === 1) setPageNumbers([1, 2, 3, 4, 5]);
+  }, [current]);
 
   return (
     <ul className="flex">
