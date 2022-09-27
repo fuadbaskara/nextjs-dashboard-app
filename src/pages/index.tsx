@@ -1,7 +1,8 @@
-import React, { ReactNode } from 'react';
+import React, { lazy, ReactNode } from 'react';
 import Head from 'next/head';
-import UserList from '@/features/UserList/View';
 import Layout from '@/components/common/Layout';
+
+const UserList = lazy(() => import('@/features/UserList/View'));
 
 export default function Home(): ReactNode {
   return (

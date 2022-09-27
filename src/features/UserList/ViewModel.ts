@@ -18,9 +18,12 @@ const useHomeState = () => {
   const { filter } = useAppSelector(filterSelector);
   const [searchValue, setSearchValue] = useState('');
 
-  const fetchUserList = (params?: any) => {
-    dispatch(getUsersData({ params }));
-  };
+  const fetchUserList = useCallback(
+    (params?: any) => {
+      dispatch(getUsersData({ params }));
+    },
+    [dispatch],
+  );
 
   const onSearch = (keyword: string) => {
     dispatch(onChangeSearch({ keyword }));
@@ -54,8 +57,7 @@ const useHomeState = () => {
 
   useEffect(() => {
     fetchUserList(filter);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filter]);
+  }, [fetchUserList, filter]);
 
   return {
     data,
