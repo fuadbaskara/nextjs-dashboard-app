@@ -8,7 +8,7 @@ export default function Home(): ReactNode {
   return (
     <Layout>
       <Head>
-        <title>Ajaib - Personal Project</title>
+        <title>Dashboard - Personal Project</title>
         <meta name="robots" content="max-image-preview:large" />
       </Head>
       <UserList />
